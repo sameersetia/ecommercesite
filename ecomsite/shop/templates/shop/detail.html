@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <title>{{ product_object.title }}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="{% url 'index' %}">E-Commerce</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="btn btn-light" href="{% url 'index' %}">Home <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <form >
+                            <input type="hidden" id="category" name="category" value ="Fashion">
+                            <button class="btn btn-light" type="submit">Fashion</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form >
+                            <input type="hidden" id="category" name="category" value ="Electronics">
+                            <button class="btn btn-light" type="submit">Electronics</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form >
+                            <input type="hidden" id="category" name="category" value ="Fitness">
+                            <button class="btn btn-light" type="submit">Fitness</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                          </li>
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img width ="600px"src="{{ product_object.image }}" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>{{ product_object.title }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>Price: ₹{{ product_object.price }}</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>Offer Price: ₹{{ product_object.discount_price }}</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ product_object.description }}
+                    </div>
+                </div>
+                <a href= "/" class="btn btn-primary">BACK</a>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>
